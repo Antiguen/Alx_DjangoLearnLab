@@ -1,4 +1,5 @@
 from django.contrib import admin
+<<<<<<< HEAD
 from .models import Book # <-- THIS LINE IS CRUCIAL
 
 # Define the custom configuration for the Book model in the admin
@@ -17,3 +18,16 @@ class BookAdmin(admin.ModelAdmin):
 
 # Register the Book model with the custom BookAdmin class
 admin.site.register(Book, BookAdmin)
+=======
+from .models import Book
+
+
+# Register your models here.
+
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'publication_year')
+    list_filter = ('author', 'publication_year')
+    search_fields = ('title', 'author')
+
+admin.site.register(Book, BookAdmin)
+>>>>>>> 9dd94ebfe7878041d5f0d70f8a76c7c329b69a7a
